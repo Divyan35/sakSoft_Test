@@ -1,0 +1,25 @@
+<input [(ngModel)]="filter" (input)="filterUsers()" placeholder="Search Users" />
+<button (click)="createNewUser()">Create New User</button>
+<table>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Country</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of filteredUsers">
+      <td>{{ user.firstName }} {{ user.lastName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.country }}</td>
+      <td>{{ user.createdAt | date: 'short' }}</td>
+      <td>
+        <button (click)="goToEdit(user.email)">Edit</button>
+        <button (click)="deleteUser(user.email)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

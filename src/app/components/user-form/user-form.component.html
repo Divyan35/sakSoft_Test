@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input formControlName="firstName" placeholder="First Name" />
+  <input formControlName="lastName" placeholder="Last Name" />
+  <input formControlName="email" placeholder="Email" />
+  <select formControlName="country">
+    <option disabled selected value="">Select Country</option>
+    <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
+  </select>
+  <button type="submit">Save</button>
+</form>
