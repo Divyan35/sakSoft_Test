@@ -14,7 +14,7 @@ import { User } from '../../models/user.model';
 export class UserFormComponent implements OnInit {
   form: FormGroup;
   countries: string[] = [];
-  editMode = false;
+  editMode : boolean = false;
   originalEmail: string = '';
 
   constructor(
