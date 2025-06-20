@@ -2,17 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { CountryService } from '../../services/country.service';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../models/user.model';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
-  selector: 'app-user-form',
-  templateUrl: './user-form.component.html',
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, HttpClientModule],
-  providers: [UserService, CountryService]
+    selector: 'app-user-form',
+    templateUrl: './user-form.component.html',
+    styleUrls: ['./user-form.component.scss'],
+    standalone  : false
 })
 export class UserFormComponent implements OnInit {
   form: FormGroup;
@@ -46,8 +43,8 @@ export class UserFormComponent implements OnInit {
       }
     }
 
-    this.countryService.getCountries().subscribe((data:any) => {
-      this.countries = data?.geonames.map((c:any) => c.countryName).sort();
+    this.countryService.getCountries().subscribe((ele:any) => {
+      this.countries = ele?.data?.map((c:any) => c.country).sort();
     });
   }
 

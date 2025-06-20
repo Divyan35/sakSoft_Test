@@ -2,17 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user.model';
-import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  providers: [UserService]
+    selector: 'app-user-list',
+    templateUrl: './user-list.component.html',
+    styleUrls: ['./user-list.component.scss'],
+    standalone: false,
 })
 export class UserListComponent implements OnInit {
   users: User[] = [];

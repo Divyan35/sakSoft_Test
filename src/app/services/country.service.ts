@@ -7,6 +7,6 @@ export class CountryService {
   constructor(private http: HttpClient) {}
 
   getCountries(): Observable<any[]> {
-    return this.http.get<any[]>('http://api.geonames.org/countryInfoJSON?username=your_username');
+    return this.http.get<any[]>('https://countriesnow.space/api/v0.1/countries');
   }
 }
