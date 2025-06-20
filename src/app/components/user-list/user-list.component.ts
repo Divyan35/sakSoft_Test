@@ -12,7 +12,7 @@ import { User } from '../../models/user.model';
 export class UserListComponent implements OnInit {
   users: User[] = [];
   filteredUsers: User[] = [];
-  filter = '';
+  filter : string = '';
 
   constructor(private userService: UserService, private router: Router) {}
 
